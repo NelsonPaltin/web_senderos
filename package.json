@@ -1,0 +1,26 @@
+{
+  "name": "web_senderismo_loja",
+  "version": "1.0.0",
+  "description": "Web de información de senderismo",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions,Firefox ESR, not dead",
+  "scripts": {
+    "start": "npm-run-all clean parcel:dev",
+    "build": "npm-run-all clean parcel:build",
+    "parcel:dev": "parcel src/*.html",
+    "parcel:build": "parcel build src/*.html --public-url ./",
+    "clean": "rimraf dist .parcel-cache"
+  },
+  "author": "Nelson Paltin",
+  "license": "MIT",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.16.1",
+    "posthtml-include": "^2.0.1",
+    "rimraf": "^6.1.0",
+    "sharp": "^0.33.5"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  }
+}
