@@ -41,7 +41,6 @@ h3{
 header{
     max-width: 800px;
     width: 100%;
-
     margin: 0% auto;
     padding: 10px;
 
@@ -58,8 +57,7 @@ header{
 }
 
 .img-logo{
-
-    max-width:150px;
+    width: 150px;
 
 }
 
@@ -109,6 +107,11 @@ footer a{
     
 }
 
+.icono-pers-senderismo{
+    width: 50px;
+    height: 50px;
+}
+
 /* -------------------- Portada   -------------------*/
 
 main{
@@ -135,7 +138,6 @@ p{
     border-radius: 10px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-
 }
 
 .exclamar{
@@ -144,30 +146,30 @@ p{
 }
 
 .caja-direccion{
-
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 .enlace-categoria{
-    color: #4A7C0E;
+    color: #009dff;
     font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px dashed;
 }
 
 .caja-direccion a:hover{
-    color: #A30021;
+    color: #ff0033;
 }
 
 .caja-eco-iconos{
     text-align: center;
-
 }
 .caja-eco-iconos img{
     margin-left: 40px;
 }
 
 blockquote{
+    display: flex;
     background-color: #f3f3f3;
     border: 2px solid #464242;
     padding: 20px;
@@ -175,12 +177,44 @@ blockquote{
     border-radius: 10px;
 }
 
-blockquote p{
+.img-recorte{
+    width: 120px;
+    height: auto;
+    clip-path: polygon(0 50%, 10% 60%, 0 70%, 30% 100%, 70% 100%, 100% 70%, 90% 60%, 100% 50%, 90% 40%, 100% 20%, 70% 0, 30% 0, 0 20%, 10% 40%); 
+}
+
+.info-frase{
+    padding: 20px;
+}
+
+.footer-img{
     margin: 0;
+    padding: 0;
+    background: #f3f3f3;
+    color: #464242;
+    font-size: 0.7rem;
+}
+
+.footer-img a{
+    color:#009dff;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px dashed;
+}
+.footer-img a:hover{
+    color: #ff0000;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px dashed;
 }
 
 .footer-cite{
     background-color: #f3f3f3;
+    display:flex;
+
+    align-content: center;
+    justify-content: flex-end;
+    
 
     margin:0 ;
     padding-top: 0;
@@ -188,16 +222,77 @@ blockquote p{
 
     padding-right: 40px;
     border-radius: 10px;
-    text-align: right;
+
+    
 }
+.footer-cite p{
+    font-size: 1rem;
+    color: #464242;
+    
+}
+
+.corazon-animado{
+    width: 30px;
+    height: 30px;
+}
+
+.corazon-animado path{
+    fill: #464242;
+}
+
+.corazon-palpitacion{
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: palpitacion 2s ease-in-out infinite;
+}
+
+@keyframes palpitacion{
+    0%, 100% { transform: scale(1.5); }
+    50%{ transform: scale(1); }
+}
+
+.efecto-portada-svg{
+  width: 100%;  
+  height: auto;
+  font-size: 3rem;
+  font-weight: 900;
+
+}
+.grupo-caracter{
+
+    transform: translateX(20%);
+    
+   
+}
+
+.caracter{
+    animation: salto2 1.5s ease-in-out infinite;
+    fill: #464242;
+}
+
+.caracter:nth-child(1){ animation-delay: 0.00s; }
+.caracter:nth-child(2){ animation-delay: 0.12s; }
+.caracter:nth-child(3){ animation-delay: 0.24s; }
+.caracter:nth-child(4){ animation-delay: 0.48s; }
+.caracter:nth-child(5){ animation-delay: 0.24s; }
+.caracter:nth-child(6){ animation-delay: 0.12s; }
+.caracter:nth-child(7){ animation-delay: 0.00s; }
+
+@keyframes salto2{
+  0%,100%{ transform: translateY(10px); }
+  30%    { transform: translateY(-5px); }
+  50%    { transform: translateY(10px); }
+}
+
 
 /* -------------------- Categoria   -------------------*/
 .lista{
     text-align: center;
 }
 
-.lista img{
-    width: 40%;
+.direccion-del-arte img{
+    width: 100%;
+    max-width:800px ;
     transition: transform 0.6s ease;
     transform-origin: center center;
     border-radius: 10px;
@@ -315,6 +410,13 @@ iframe{
 
 @media (max-width: 900px) {
 
+
+    blockquote{
+        text-align: center;
+        display: grid;
+        
+    }
+
     main{
         max-width: 900px;
     }
@@ -344,14 +446,34 @@ iframe{
         text-decoration: underline;
     }
 
-    .img-logo{
-        max-width:400px;
+
+    /*
+        ------ categoría ------
+    */
+
+    .lista img:hover{
+        transform:none;
     }
 
 }
 
 
 @media (max-width: 600px) {
+
+
+    .caracter{
+        animation: none;
+    }
+
+    main{
+        width: 100%;
+    }
+    footer{
+        width: 100%;
+    }
+    header{
+        width: 100%;
+    }
 
     h1{
         font-size: 1.8rem;
@@ -410,8 +532,10 @@ iframe{
     */
 
     .lista img:hover{
-        transform: scale(2.5);
+        transform:none;
     }
+
+    
 
     /*
         ------ detalles ------
@@ -432,4 +556,3 @@ iframe{
    
 
 }
-

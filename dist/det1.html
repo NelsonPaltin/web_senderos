@@ -34,9 +34,9 @@
         <a class="volver" href="/categoria.html">/categoria/ atrás</a>
 
         <h1 id="det-nombre">detalle</h1>
-        
-        <img src="/m6.59dd3b66.jpeg" alt="imagen representativa" id="det-img-rep" class="img-representativa">
 
+        <img class="img-representativa" src="/m6-800.61278cc0.jpeg" srcset="/m6-400.e935fe47.jpeg 400w, /m6-800.61278cc0.jpeg 800w" sizes="(max-width: 600px) 100vw, 800px" alt="Imagen representativa">
+       
         <p id="det-par1">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
@@ -61,9 +61,19 @@
         
         <div class="fotos-galeria">
 
-            <img src="/g5.fae7a113.jpeg" alt="imagen de galeria 1 paisaje" id="det-img-1">
-            <img src="/g6.f145ff01.jpeg" alt="imagen de galeria 2 paisaje" id="det-img-2">
-            <img src="/g7.ace772c9.jpeg" alt="imagen de galeria 3 paisaje" id="det-img-3">
+            <picture>
+                <source srcset="/g5.a52a9999.webp" type="image/webp">
+                <img src="/g5.fae7a113.jpeg" alt="Imagen de galería 1 paisaje" id="det-img-1" loading="lazy">
+            </picture>
+            <picture>
+                <source srcset="/g6.27028f4e.webp" type="image/webp">
+                <img src="/g6.f145ff01.jpeg" alt="Imagen de galería 2 paisaje" id="det-img-2" loading="lazy">
+            </picture>
+
+            <picture>
+                <source srcset="/g7.c914cfc5.webp" type="image/webp">
+                <img src="/g7.ace772c9.jpeg" alt="Imagen de galería 3 paisaje" id="det-img-3" loading="lazy">
+            </picture>
 
         </div>
 

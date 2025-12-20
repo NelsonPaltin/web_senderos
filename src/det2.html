@@ -19,8 +19,12 @@
         <a class = "volver"href="categoria.html">/categoria/ atrás</a>
 
         <h1 id="det-nombre">detalle</h1>
-        
-        <img src="img/m4.jpeg" alt="imagen representativa" id="det-img-rep" class = "img-representativa">
+
+        <img class="img-representativa"
+            src="img/m4-400.jpeg"
+            srcset="img/m4-400.jpeg 1x, img/m4-600.jpeg 2x, img/m4-800.jpeg 3x"
+            alt="Imagen representativa"
+        >
 
         <p id="det-par1">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -45,11 +49,20 @@
         <hr>
         
         <div class="fotos-galeria">
+            <picture>
+                <source srcset="img/m2.webp" type="image/webp">
+                <img src="img/m2.jpeg" alt="Imagen de galería 1 paisaje" id="det-img-1" loading="lazy">
+            </picture>
 
-            <img src="img/m2.jpeg" alt="imagen de galeria 1 paisaje" id ="det-img-1">
-            <img src="img/m3.jpeg" alt="imagen de galeria 2 paisaje" id ="det-img-2">
-            <img src="img/m5.jpeg" alt="imagen de galeria 3 paisaje" id ="det-img-3">
+            <picture>
+                <source srcset="img/m3.webp" type="image/webp">
+                <img src="img/m3.jpeg" alt="Imagen de galería 2 paisaje" id="det-img-2" loading="lazy">
+            </picture>
 
+            <picture>
+                <source srcset="img/m5.webp" type="image/webp">
+                <img src="img/m5.jpeg" alt="Imagen de galería 3 paisaje" id="det-img-3" loading="lazy">
+            </picture>
         </div>
 
         <hr>

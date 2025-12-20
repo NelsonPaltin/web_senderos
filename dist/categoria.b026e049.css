@@ -47,7 +47,7 @@ header {
 }
 
 .img-logo {
-  max-width: 150px;
+  width: 150px;
 }
 
 header a {
@@ -86,6 +86,11 @@ footer a {
   margin-top: 10px;
 }
 
+.icono-pers-senderismo {
+  width: 50px;
+  height: 50px;
+}
+
 main {
   width: 100%;
   max-width: 800px;
@@ -120,12 +125,14 @@ p {
 }
 
 .enlace-categoria {
-  color: #4a7c0e;
+  color: #009dff;
+  border-bottom: 2px dashed;
   font-weight: 700;
+  text-decoration: none;
 }
 
 .caja-direccion a:hover {
-  color: #a30021;
+  color: #f03;
 }
 
 .caja-eco-iconos {
@@ -142,30 +149,149 @@ blockquote {
   border: 2px solid #464242;
   border-radius: 10px;
   padding: 20px;
+  display: flex;
 }
 
-blockquote p {
+.img-recorte {
+  clip-path: polygon(0 50%, 10% 60%, 0 70%, 30% 100%, 70% 100%, 100% 70%, 90% 60%, 100% 50%, 90% 40%, 100% 20%, 70% 0, 30% 0, 0 20%, 10% 40%);
+  width: 120px;
+  height: auto;
+}
+
+.info-frase {
+  padding: 20px;
+}
+
+.footer-img {
+  color: #464242;
+  background: #f3f3f3;
   margin: 0;
+  padding: 0;
+  font-size: .7rem;
+}
+
+.footer-img a {
+  color: #009dff;
+  border-bottom: 2px dashed;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-img a:hover {
+  color: red;
+  border-bottom: 2px dashed;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .footer-cite {
-  text-align: right;
   background-color: #f3f3f3;
   border-radius: 10px;
+  place-content: center flex-end;
   margin: 0;
   padding-top: 0;
   padding-bottom: 0;
   padding-right: 40px;
+  display: flex;
+}
+
+.footer-cite p {
+  color: #464242;
+  font-size: 1rem;
+}
+
+.corazon-animado {
+  width: 30px;
+  height: 30px;
+}
+
+.corazon-animado path {
+  fill: #464242;
+}
+
+.corazon-palpitacion {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: 2s ease-in-out infinite palpitacion;
+}
+
+@keyframes palpitacion {
+  0%, 100% {
+    transform: scale(1.5);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+.efecto-portada-svg {
+  width: 100%;
+  height: auto;
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.grupo-caracter {
+  transform: translateX(20%);
+}
+
+.caracter {
+  fill: #464242;
+  animation: 1.5s ease-in-out infinite salto2;
+}
+
+.caracter:first-child {
+  animation-delay: 0s;
+}
+
+.caracter:nth-child(2) {
+  animation-delay: .12s;
+}
+
+.caracter:nth-child(3) {
+  animation-delay: .24s;
+}
+
+.caracter:nth-child(4) {
+  animation-delay: .48s;
+}
+
+.caracter:nth-child(5) {
+  animation-delay: .24s;
+}
+
+.caracter:nth-child(6) {
+  animation-delay: .12s;
+}
+
+.caracter:nth-child(7) {
+  animation-delay: 0s;
+}
+
+@keyframes salto2 {
+  0%, 100% {
+    transform: translateY(10px);
+  }
+
+  30% {
+    transform: translateY(-5px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
 }
 
 .lista {
   text-align: center;
 }
 
-.lista img {
+.direccion-del-arte img {
   transform-origin: center;
   border-radius: 10px;
-  width: 40%;
+  width: 100%;
+  max-width: 800px;
   transition: transform .6s;
 }
 
@@ -254,6 +380,11 @@ iframe {
 }
 
 @media (width <= 900px) {
+  blockquote {
+    text-align: center;
+    display: grid;
+  }
+
   main {
     max-width: 900px;
   }
@@ -282,12 +413,20 @@ iframe {
     text-decoration: underline;
   }
 
-  .img-logo {
-    max-width: 400px;
+  .lista img:hover {
+    transform: none;
   }
 }
 
 @media (width <= 600px) {
+  .caracter {
+    animation: none;
+  }
+
+  main, footer, header {
+    width: 100%;
+  }
+
   h1 {
     font-size: 1.8rem;
   }
@@ -333,7 +472,7 @@ iframe {
   }
 
   .lista img:hover {
-    transform: scale(2.5);
+    transform: none;
   }
 
   .fotos-galeria {

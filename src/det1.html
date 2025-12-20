@@ -19,9 +19,17 @@
         <a class = "volver"href="categoria.html">/categoria/ atrás</a>
 
         <h1 id="det-nombre">detalle</h1>
-        
-        <img src="img/m6.jpeg" alt="imagen representativa" id="det-img-rep" class = "img-representativa">
 
+        <img class="img-representativa"
+            src="img/m6-800.jpeg"
+            srcset="
+                img/m6-400.jpeg 400w,
+                img/m6-800.jpeg 800w
+            "
+            sizes="(max-width: 600px) 100vw, 800px"
+            alt="Imagen representativa"
+        >
+       
         <p id="det-par1">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
@@ -46,9 +54,19 @@
         
         <div class="fotos-galeria">
 
-            <img src="img/g5.jpeg" alt="imagen de galeria 1 paisaje" id ="det-img-1">
-            <img src="img/g6.jpeg" alt="imagen de galeria 2 paisaje" id ="det-img-2">
-            <img src="img/g7.jpeg" alt="imagen de galeria 3 paisaje" id ="det-img-3">
+            <picture>
+                <source srcset="img/g5.webp" type="image/webp">
+                <img src="img/g5.jpeg" alt="Imagen de galería 1 paisaje" id="det-img-1" loading="lazy">
+            </picture>
+            <picture>
+                <source srcset="img/g6.webp" type="image/webp">
+                <img src="img/g6.jpeg" alt="Imagen de galería 2 paisaje" id="det-img-2" loading="lazy">
+            </picture>
+
+            <picture>
+                <source srcset="img/g7.webp" type="image/webp">
+                <img src="img/g7.jpeg" alt="Imagen de galería 3 paisaje" id="det-img-3" loading="lazy">
+            </picture>
 
         </div>
 
