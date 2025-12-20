@@ -234,6 +234,7 @@ blockquote{
 .corazon-animado{
     width: 30px;
     height: 30px;
+    padding-left: 20px;
 }
 
 .corazon-animado path{
@@ -258,11 +259,9 @@ blockquote{
   font-weight: 900;
 
 }
-.grupo-caracter{
 
+.grupo-caracter{
     transform: translateX(20%);
-    
-   
 }
 
 .caracter{
@@ -289,6 +288,7 @@ blockquote{
 .lista{
     text-align: center;
 }
+
 
 .direccion-del-arte img{
     width: 100%;
@@ -414,7 +414,13 @@ iframe{
     blockquote{
         text-align: center;
         display: grid;
+        padding: 0;
         
+    }
+
+    blockquote .info-frase{
+        padding-top: 0;
+        padding-left: 30px;
     }
 
     main{
@@ -534,8 +540,6 @@ iframe{
     .lista img:hover{
         transform:none;
     }
-
-    
 
     /*
         ------ detalles ------
