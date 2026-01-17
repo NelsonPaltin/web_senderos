@@ -4,7 +4,7 @@ import L from "leaflet";
 import 'leaflet/dist/leaflet.css';
 
 
-const sendero = senderos.find(x => x.id === 1);
+const sendero = senderos.find(x => x.id === 2);
 
 // Crear el mapa y establecer coordenadas de visualización
 const map = L.map("map").setView([sendero.latitud_inicio, sendero.longitud_inicio], 14);
