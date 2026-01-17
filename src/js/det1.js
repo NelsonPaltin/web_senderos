@@ -35,6 +35,8 @@ document.querySelector("#det-img-3").alt = "Imagen representatica de " + sendero
 // Video
 document.querySelector("#det-video").src = sendero.video;
 
+const element = document.getElementById("map");
+  if (!element) return;
 // Crear el mapa y establecer coordenadas de visualización
 const map = L.map("map").setView([sendero.latitud_inicio, sendero.longitud_inicio], 14);
 

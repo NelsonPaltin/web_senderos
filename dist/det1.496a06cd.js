@@ -742,6 +742,8 @@ document.querySelector("#det-img-3").src = sendero.img_g3;
 document.querySelector("#det-img-3").alt = "Imagen representatica de " + sendero.nombre;
 */ // Video
 document.querySelector("#det-video").src = sendero.video;
+const element = document.getElementById("map");
+if (!element) return;
 // Crear el mapa y establecer coordenadas de visualización
 const map = (0, _leafletDefault.default).map("map").setView([
     sendero.latitud_inicio,

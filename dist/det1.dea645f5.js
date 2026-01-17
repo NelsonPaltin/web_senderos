@@ -207,7 +207,7 @@
       });
     }
   }
-})({"1Gndu":[function(require,module,exports,__globalThis) {
+})({"g2lsV":[function(require,module,exports,__globalThis) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -215,7 +215,7 @@ var HMR_SERVER_PORT = 1234;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "439701173a9199ea";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "6b6fbdb6ae3f3e2e";
+module.bundle.HMR_BUNDLE_ID = "8a1281bedea645f5";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_SERVER_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -713,30 +713,50 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     }
 }
 
-},{}],"coKEM":[function(require,module,exports,__globalThis) {
-obtenerDatos();
-async function obtenerDatos() {
-    try {
-        // Cambiamos la URL a una API real (Open-Meteo) que tiene CORS abierto
-        const url = 'https://api.open-meteo.com/v1/forecast?latitude=-1.25&longitude=-78.25&current=precipitation,rain&timezone=America/Los_Angeles';
-        const respuesta = await fetch(url);
-        if (respuesta.ok) {
-            const datos = await respuesta.json();
-            console.log("Datos obtenidos:", datos);
-            // Aquí podrías llamar a una función para mostrar el clima junto a tus opiniones
-            // mostrarClima(datos.current.precipitation);
-            const btn = document.createElement("button");
-            btn.textContent = "Clima: \uD83C\uDF24\uFE0F";
-            btn.style.cssText = "position:fixed;bottom:20px;right:25px;z-index:9999;padding:20px 12px;border-radius:20px;border:4px solid #0095ff;background: #b9e2ff; font-size: 25px;";
-            btn.addEventListener("click", ()=>alert(datos.current.precipitation));
-            document.body.appendChild(btn);
-        } else throw new Error(`Error en el servidor: ${respuesta.status}`);
-    } catch (error) {
-        // Este bloque captura tanto errores de red (CORS) como de servidor
-        console.error("Error al obtener los datos:", error.message);
-    }
-}
+},{}],"eH1CH":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _senderosJs = require("./senderos.js");
+var _leaflet = require("leaflet");
+var _leafletDefault = parcelHelpers.interopDefault(_leaflet);
+var _leafletCss = require("leaflet/dist/leaflet.css");
+const sendero = (0, _senderosJs.senderos).find((x)=>x.id === 1);
+// Nombre del sendero
+document.querySelector("#det-nombre").textContent = sendero.nombre;
+// Imagen representativa
+/*
+document.querySelector("#det-img-rep").src = sendero.img;
+document.querySelector("#det-img-rep").alt = sendero.nombre;
+*/ // Párrafos
+document.querySelector("#det-par1").textContent = sendero.parr1;
+document.querySelector("#det-par2").textContent = sendero.parr2;
+document.querySelector("#det-par3").textContent = sendero.parr3;
+/*
+// Imágenes de galería
+document.querySelector("#det-img-1").src = sendero.img_g1;
+document.querySelector("#det-img-1").alt = "Imagen representatica de " + sendero.nombre;
 
-},{}]},["1Gndu","coKEM"], "coKEM", "parcelRequire716d", {})
+document.querySelector("#det-img-2").src = sendero.img_g2;
+document.querySelector("#det-img-2").alt = "Imagen representatica de " + sendero.nombre;
 
-//# sourceMappingURL=web_sendero.ae3f3e2e.js.map
+document.querySelector("#det-img-3").src = sendero.img_g3;
+document.querySelector("#det-img-3").alt = "Imagen representatica de " + sendero.nombre;
+*/ // Video
+document.querySelector("#det-video").src = sendero.video;
+// Crear el mapa y establecer coordenadas de visualización
+const map = (0, _leafletDefault.default).map("map").setView([
+    sendero.latitud_inicio,
+    sendero.longitud_inicio
+], 14);
+// Cargar el mozaico
+(0, _leafletDefault.default).tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; OpenStreetMap contributors"
+}).addTo(map);
+// Añadir un marker/bandera de posición al mapa
+(0, _leafletDefault.default).marker([
+    sendero.latitud_inicio,
+    sendero.longitud_inicio
+]).addTo(map);
+
+},{"./senderos.js":"bvR7j","leaflet":"gzvEd","leaflet/dist/leaflet.css":"6JhOO","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"6JhOO":[function() {},{}]},["g2lsV","eH1CH"], "eH1CH", "parcelRequire716d", {})
+
+//# sourceMappingURL=det1.dea645f5.js.map
