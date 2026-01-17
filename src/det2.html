@@ -20,11 +20,11 @@
 
         <h1 id="det-nombre">detalle</h1>
 
-        <img fetchpriority="high" class="img-representativa"
-            src="img/m4-400.jpeg"
-            srcset="img/m4-800.jpeg 1x, img/m4-600.jpeg 2x, img/m4-400.jpeg 3x"
-            alt="Imagen representativa"
-        >
+        <picture fetchpriority="high" class="img-representativa">
+            <source media="(min-width: 900px)" srcset="img/m4-800.webp" type="image/webp">
+            <source media="(min-width: 600px)" srcset="img/m4-600.webp"  type="image/webp">
+            <img src="img/m4-400.jpeg" alt="Fotografía de referencia del detalle 2">
+        </picture>
 
 
 

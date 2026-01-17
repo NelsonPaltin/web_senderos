@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang=es><script type=module src=det1.f4b7aef3.js></script><link rel=stylesheet href=det2.73c45f7e.css><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Detalle</title><link rel=stylesheet href=categoria.821cf537.css><link rel=stylesheet href=https://unpkg.com/leaflet@1.9.4/dist/leaflet.css><link rel=icon type=image/jpg href=logo.34a17dcb.png><script type=module src=det2.934ae82c.js></script><body>
+<!DOCTYPE html><html lang=es><script type=module src=det1.f4b7aef3.js></script><link rel=stylesheet href=det2.73c45f7e.css><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Detalle</title><link rel=stylesheet href=categoria.821cf537.css><link rel=stylesheet href=https://unpkg.com/leaflet@1.9.4/dist/leaflet.css><link rel=icon type=image/jpg href=logo.34a17dcb.png><script type=module src=det2.1187b2e4.js></script><body>
 
     <header>
     <div class=header-nav>
@@ -25,7 +25,11 @@
 
         <h1 id=det-nombre>detalle</h1>
 
-        <img fetchpriority=high class=img-representativa src=m4-400.ee7b8593.jpeg srcset="m4-800.75ef9e3a.jpeg 1x,m4-600.dfc311ec.jpeg 2x,m4-400.ee7b8593.jpeg 3x" alt="Imagen representativa">
+        <picture fetchpriority=high class=img-representativa>
+            <source media="(min-width: 900px)" srcset=m4-800.dba385e7.webp type=image/webp>
+            <source media="(min-width: 600px)" srcset=m4-600.17210077.webp type=image/webp>
+            <img src=m4-400.ee7b8593.jpeg alt="Fotografía de referencia del detalle 2">
+        </picture>
 
 
 
@@ -89,6 +93,8 @@
         <div id=map></div>
         
     </main>
+
+    <script type=module src=det2.cfb49cff.js></script>
     
     <footer>
     <p>Nelson Ricardo Paltin Cabrera</p>
