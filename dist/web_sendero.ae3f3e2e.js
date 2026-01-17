@@ -207,15 +207,15 @@
       });
     }
   }
-})({"9JJ5D":[function(require,module,exports,__globalThis) {
+})({"1Gndu":[function(require,module,exports,__globalThis) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SERVER_PORT = 1234;
 var HMR_SECURE = false;
-var HMR_ENV_HASH = "d6ea1d42532a7575";
+var HMR_ENV_HASH = "439701173a9199ea";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "7055c94b59712999";
+module.bundle.HMR_BUNDLE_ID = "6b6fbdb6ae3f3e2e";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_SERVER_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -713,8 +713,30 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     }
 }
 
-},{}],"4M6V8":[function(require,module,exports,__globalThis) {
+},{}],"coKEM":[function(require,module,exports,__globalThis) {
+obtenerDatos();
+async function obtenerDatos() {
+    try {
+        // Cambiamos la URL a una API real (Open-Meteo) que tiene CORS abierto
+        const url = 'https://api.open-meteo.com/v1/forecast?latitude=-1.25&longitude=-78.25&current=precipitation,rain&timezone=America/Los_Angeles';
+        const respuesta = await fetch(url);
+        if (respuesta.ok) {
+            const datos = await respuesta.json();
+            console.log("Datos obtenidos:", datos);
+            // Aquí podrías llamar a una función para mostrar el clima junto a tus opiniones
+            // mostrarClima(datos.current.precipitation);
+            const btn = document.createElement("button");
+            btn.textContent = "Clima: \uD83C\uDF24\uFE0F";
+            btn.style.cssText = "position:fixed;bottom:20px;right:25px;z-index:9999;padding:20px 12px;border-radius:20px;border:4px solid #0095ff;background: #b9e2ff; font-size: 25px;";
+            btn.addEventListener("click", ()=>alert(datos.current.precipitation));
+            document.body.appendChild(btn);
+        } else throw new Error(`Error en el servidor: ${respuesta.status}`);
+    } catch (error) {
+        // Este bloque captura tanto errores de red (CORS) como de servidor
+        console.error("Error al obtener los datos:", error.message);
+    }
+}
 
-},{}]},["9JJ5D","4M6V8"], "4M6V8", "parcelRequire716d", {})
+},{}]},["1Gndu","coKEM"], "coKEM", "parcelRequire716d", {})
 
-//# sourceMappingURL=web_sendero.59712999.js.map
+//# sourceMappingURL=web_sendero.ae3f3e2e.js.map
